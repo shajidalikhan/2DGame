@@ -17,6 +17,7 @@
     <ClInclude Include="src\shader.h" />
     <ClInclude Include="src\texture.h" />
     <ClInclude Include="vendor\stb_image\stb_image.h" />
+    <ClInclude Include="src\particleGenerator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\SpriteRenderer.cpp" />
@@ -33,5 +34,6 @@
     <ClCompile Include="src\shader.cpp" />
     <ClCompile Include="src\texture.cpp" />
     <ClCompile Include="vendor\stb_image\stb_image.cpp" />
+    <ClCompile Include="src\particleGenerator.cpp" />
   </ItemGroup>
 </Project>

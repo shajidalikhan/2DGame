@@ -85,6 +85,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\particleGenerator.h" />
     <ClInclude Include="src\SpriteRenderer.h" />
     <ClInclude Include="src\ballObject.h" />
     <ClInclude Include="src\gameLevel.h" />
@@ -96,6 +97,7 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\particleGenerator.cpp" />
     <ClCompile Include="src\SpriteRenderer.cpp" />
     <ClCompile Include="src\ballObject.cpp" />
     <ClCompile Include="src\gameLevel.cpp" />

@@ -85,6 +85,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\SpriteRenderer.h" />
+    <ClInclude Include="src\ballObject.h" />
+    <ClInclude Include="src\gameLevel.h" />
+    <ClInclude Include="src\gameObject.h" />
     <ClInclude Include="src\progress\game.h" />
     <ClInclude Include="src\resource_manager.h" />
     <ClInclude Include="src\shader.h" />
@@ -92,6 +96,10 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\SpriteRenderer.cpp" />
+    <ClCompile Include="src\ballObject.cpp" />
+    <ClCompile Include="src\gameLevel.cpp" />
+    <ClCompile Include="src\gameObject.cpp" />
     <ClCompile Include="src\progress\game.cpp" />
     <ClCompile Include="src\progress\program.cpp" />
     <ClCompile Include="src\resource_manager.cpp" />

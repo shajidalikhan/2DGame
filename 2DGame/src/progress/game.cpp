@@ -52,11 +52,27 @@ void Game::Init()
     GameLevel two; two.Load("res/levels/two.lvl", this->Width, this->Height / 2);
     GameLevel three; three.Load("res/levels/three.lvl", this->Width, this->Height / 2);
     GameLevel four; four.Load("res/levels/four.lvl", this->Width, this->Height / 2);
+    GameLevel five; five.Load("res/levels/five.lvl", this->Width, this->Height / 2);
+    GameLevel six; six.Load("res/levels/six.lvl", this->Width, this->Height / 2);
+    GameLevel seven; seven.Load("res/levels/seven.lvl", this->Width, this->Height / 2);
+    GameLevel eight; eight.Load("res/levels/eight.lvl", this->Width, this->Height / 2);
+    GameLevel nine; nine.Load("res/levels/nine.lvl", this->Width, this->Height / 2);
+    GameLevel ten; ten.Load("res/levels/ten.lvl", this->Width, this->Height / 2);
+    GameLevel eleven; eleven.Load("res/levels/eleven.lvl", this->Width, this->Height / 2);
+    GameLevel twelve; twelve.Load("res/levels/twelve.lvl", this->Width, this->Height / 2);
     this->Levels.push_back(one);
     this->Levels.push_back(two);
     this->Levels.push_back(three);
     this->Levels.push_back(four);
-    this->Level = 3;
+    this->Levels.push_back(five);
+    this->Levels.push_back(six);
+    this->Levels.push_back(seven);
+    this->Levels.push_back(eight);
+    this->Levels.push_back(nine);
+    this->Levels.push_back(ten);
+    this->Levels.push_back(eleven);
+    this->Levels.push_back(twelve);
+    this->Level = 0;
     // configure game objects
     glm::vec2 playerPos = glm::vec2(this->Width / 2.0f - PLAYER_SIZE.x / 2.0f, this->Height - PLAYER_SIZE.y);
     Player = new GameObject(playerPos, PLAYER_SIZE, ResourceManager::GetTexture("paddle"));
@@ -77,6 +93,12 @@ void Game::Update(float dt)
     {
         this->ResetLevel();
         this->ResetPlayer();
+    }
+    // check win condition
+    if (this->State == GAME_ACTIVE && this->Levels[this->Level].IsCompleted())
+    {
+        this->ResetPlayer();
+        this->Level = (this->Level + 1) % 12; // Advance to next level, loop back to start if finished
     }
 }
 
@@ -137,6 +159,22 @@ void Game::ResetLevel()
         this->Levels[2].Load("res/levels/three.lvl", this->Width, this->Height / 2);
     else if (this->Level == 3)
         this->Levels[3].Load("res/levels/four.lvl", this->Width, this->Height / 2);
+    else if (this->Level == 4)
+        this->Levels[4].Load("res/levels/five.lvl", this->Width, this->Height / 2);
+    else if (this->Level == 5)
+        this->Levels[5].Load("res/levels/six.lvl", this->Width, this->Height / 2);
+    else if (this->Level == 6)
+        this->Levels[6].Load("res/levels/seven.lvl", this->Width, this->Height / 2);
+    else if (this->Level == 7)
+        this->Levels[7].Load("res/levels/eight.lvl", this->Width, this->Height / 2);
+    else if (this->Level == 8)
+        this->Levels[8].Load("res/levels/nine.lvl", this->Width, this->Height / 2);
+    else if (this->Level == 9)
+        this->Levels[9].Load("res/levels/ten.lvl", this->Width, this->Height / 2);
+    else if (this->Level == 10)
+        this->Levels[10].Load("res/levels/eleven.lvl", this->Width, this->Height / 2);
+    else if (this->Level == 11)
+        this->Levels[11].Load("res/levels/twelve.lvl", this->Width, this->Height / 2);
 }
 
 void Game::ResetPlayer()
